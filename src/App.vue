@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header :totalCounter="totalCounter"  />
-    <Question :currentQuestion="currentQuestion" :next="next" />
+    <Header :totalCounter="totalCounter" :correctCount="correctCount"  />
+    <Question :currentQuestion="currentQuestion" v-on:correctCount="correct" :next="next" />
   </div>
 </template>
 
@@ -16,7 +16,8 @@ export default {
       questions:[],
       currentQuestion:Object,
       index:0,
-      totalCounter:1
+      totalCounter:1,
+      correctCount:0
     }
   },
   components: {
@@ -27,6 +28,9 @@ export default {
     next(){
       this.index++;
       this.totalCounter=this.index+1;
+    },
+    correct(value){
+      this.correctCount=value
     }
   },
   mounted() {

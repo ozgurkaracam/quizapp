@@ -36,6 +36,9 @@
         answerQuestion(){
             this.answered=true;
             this.corrected = this.selectedAnswer==this.currentQuestion.correct_answer;
+            if(this.corrected)
+                this.correctCount++;
+            this.$emit("correctCount",this.correctCount);
         },
             select(question){
                 this.selectedAnswer=question
@@ -48,7 +51,8 @@
                 selectedAnswer: null,
                 answered:false,
                 corrected:null,
-                nextt:true
+                nextt:true,
+                correctCount:0
             }
         },
         props: {
