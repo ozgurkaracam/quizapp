@@ -47,7 +47,8 @@
                 shuffledAnswers: [],
                 selectedAnswer: null,
                 answered:false,
-                corrected:null
+                corrected:null,
+                nextt:true
             }
         },
         props: {
@@ -73,6 +74,7 @@
                     this.corrected=null;
                 }
             },
+
 
         }
     }
