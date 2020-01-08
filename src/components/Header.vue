@@ -6,7 +6,8 @@
         </b-nav>
     </div>
 </template>
-
+// 5404350011204815
+// şehri şüheda hariç. abdülkadir ödenmiş, fettah başvurusu yok.
 <script>
     export default{
         data(){
